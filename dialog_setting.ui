@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dialog_setting</class>
+ <widget class="QDialog" name="dialog_setting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>374</width>
+    <height>291</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>50</width>
+    <height>111</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1677721</width>
+    <height>1677721</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>接口设置</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #0a1428;</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="buttonbox">
+     <property name="font">
+      <font>
+       <family>宋体</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    /* 正常状态 */
+    background-color: #00D4FF; /* 浅灰背景 */
+    color: #ffffff; /* 深灰文字 */
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding: 8px 16px;
+    font-size: 18px;
+}
+
+
+QPushButton:pressed {
+    /* 按压状态（核心效果） */
+    background-color: #3B82F6; /* 蓝色背景 */
+    color: white; /* 白色文字（与正常状态反转） */
+    border-color: #2563EB; /* 深蓝边框 */
+}
+
+QPushButton:disabled {
+    /* 禁用状态（可选） */
+    background-color: #f5f5f5;
+    color: #999999;
+    border-color: #dddddd;
+}</string>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="font">
+      <font>
+       <family>宋体</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabBar::tab {
+    /* 未选中标签样式 */
+    background-color: #1E293B; /* 深蓝背景 */
+    color: #94A3B8; /* 浅灰文字 */
+    padding: 8px 16px;
+    margin-right: 2px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 100;
+}
+
+QTabBar::tab:selected {
+    /* 选中标签样式 */
+    background-color: #1E293B; /* 亮蓝背景 */
+    color: #00D4FF;
+    border: 1px solid #60A5FA; /* 亮蓝边框 */
+}
+
+QTabBar::tab:hover:!selected {
+    /* 未选中但悬停 */
+    background-color: #334155;
+    color: #CBD5E1;
+}
+
+
+/* 移除标签栏底部边框 */
+QTabWidget::pane {
+    border: none;
+    background-color: #1E293B; /* 与标签背景协调 */
+}
+
+QTabWidget::tab-bar {
+    alignment: left; /* 标签左对齐 */
+    background-color: transparent;
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="net_tab">
+      <attribute name="title">
+       <string>以太网</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,1,1" columnstretch="1,2">
+         <item row="1" column="0">
+          <widget class="QLabel" name="target_port_label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #8899aa;</string>
+           </property>
+           <property name="text">
+            <string>目标端口：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="target_ip_label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #8899aa;</string>
+           </property>
+           <property name="text">
+            <string>目标IP地址：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="loc_port_label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #8899aa;</string>
+           </property>
+           <property name="text">
+            <string>本地监听端口：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="target_port">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(255, 255, 255)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="loc_port">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(255, 255, 255)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="target_ip">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(255, 255, 255)</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="serial_tab">
+      <attribute name="title">
+       <string>串口</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0" rowspan="2">
+        <layout class="QGridLayout" name="gridLayout_4" rowstretch="1,1,1,1,1" columnstretch="1,2">
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #8899aa;</string>
+           </property>
+           <property name="text">
+            <string>校验位</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #8899aa;</string>
+           </property>
+           <property name="text">
+            <string>串口号</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #8899aa;</string>
+           </property>
+           <property name="text">
+            <string>数据位</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #8899aa;</string>
+           </property>
+           <property name="text">
+            <string>波特率</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #8899aa;</string>
+           </property>
+           <property name="text">
+            <string>停止位</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="baudrate_box">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(255, 255, 255)</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>9600</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>18520</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>38400</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>57600</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>115200</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="port_box">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(255, 255, 255)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="databits_box">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(255, 255, 255)</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="parity_box">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(255, 255, 255)</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>N</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>E</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>O</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>M</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>S</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="stopbits_box">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>宋体</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(255, 255, 255)</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1.5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

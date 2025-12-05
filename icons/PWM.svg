@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 50">
+  <!-- 1.5 个周期，占空比 10% 的 PWM 方波 -->
+  <path 
+    d="M0 45 L10 45 L10 5 L100 5 L100 45 L110 45 L110 5 L150 5"
+    stroke="#00FFFF"
+    stroke-width="3"
+    fill="none"
+  />
+</svg>

@@ -1,0 +1,3312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1191</width>
+    <height>855</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>ZooLark View</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #0a1428;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,10,1">
+      <item>
+       <widget class="QLabel" name="logo_lab">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 18px; font-weight: bold; color: rgb(0, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>ANALYZER</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="connect_btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    /* 正常状态 */
+    background-color: #00D4FF; /* 浅灰背景 */
+    color: #ffffff; /* 深灰文字 */
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+QPushButton:pressed {
+    /* 按压状态（核心效果） */
+    background-color: #3B82F6; /* 蓝色背景 */
+    color: white; /* 白色文字（与正常状态反转） */
+    border-color: #2563EB; /* 深蓝边框 */
+}
+
+QPushButton:disabled {
+    /* 禁用状态（可选） */
+    background-color: #f5f5f5;
+    color: #999999;
+    border-color: #dddddd;
+}</string>
+        </property>
+        <property name="text">
+         <string>连接设备</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tab_widget">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTabBar::tab {
+    /* 未选中标签样式 */
+    background-color: #1E293B; /* 深蓝背景 */
+    color: #94A3B8; /* 浅灰文字 */
+    padding: 8px 16px;
+    margin-right: 2px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 100;
+}
+
+QTabBar::tab:selected {
+    /* 选中标签样式 */
+    background-color: #1E293B; /* 亮蓝背景 */
+    color: #00D4FF;
+    border: 1px solid #60A5FA; /* 亮蓝边框 */
+}
+
+QTabBar::tab:hover:!selected {
+    /* 未选中但悬停 */
+    background-color: #334155;
+    color: #CBD5E1;
+}
+
+
+/* 移除标签栏底部边框 */
+QTabWidget::pane {
+    border: none;
+    background-color: #1E293B; /* 与标签背景协调 */
+}
+
+QTabWidget::tab-bar {
+    alignment: left; /* 标签左对齐 */
+    background-color: transparent;
+}</string>
+      </property>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="QWidget" name="osc_tab">
+       <attribute name="title">
+        <string>示波器</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_3" rowstretch="0,1,1,1,1,1" columnstretch="1,1,1,1,1,1,1,1">
+          <item row="1" column="1" rowspan="4">
+           <widget class="Line" name="line_3">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2" colspan="6">
+           <widget class="Line" name="line">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>宋体</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #8899aa;</string>
+            </property>
+            <property name="title">
+             <string>测量</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_5" columnstretch="1,2">
+             <item row="0" column="0" rowspan="2" colspan="2">
+              <layout class="QGridLayout" name="gridLayout_4" rowstretch="1,1,1,1,1,1,1,1" columnstretch="1,2,1">
+               <item row="2" column="1">
+                <widget class="QLabel" name="ch1_osc_vpp_num_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>楷体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>V</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_4">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>通道1</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="2">
+                <widget class="QLabel" name="label_35">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>V</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_29">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>直流偏置</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLabel" name="ch2_osc_fre_num_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>Hz</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="label_11">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>Hz</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2">
+                <widget class="QLabel" name="label_33">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>Hz</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLabel" name="ch1_osc_bio_num_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>V</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="ch1_osc_fre_num_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>楷体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>Hz</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="label_12">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>V</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_13">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>通道2</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="label_36">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>V</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="label_15">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>峰峰值</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="fre_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>频率</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="vpp_label">
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>峰峰值</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_14">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>频率</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QLabel" name="ch2_osc_vpp_num_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>V</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="label_37">
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>直流偏置</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QLabel" name="ch2_osc_bio_num_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>V</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="2">
+                <widget class="QLabel" name="label_39">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#00D4FF</string>
+                 </property>
+                 <property name="text">
+                  <string>V</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="5" column="1" colspan="6">
+           <widget class="Line" name="line_4">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4" colspan="2">
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="ch2_timebase_label">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:rgb(0, 255, 255);
+</string>
+            </property>
+            <property name="text">
+             <string>CH2:2.00v/div</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="7" rowspan="4">
+           <widget class="Line" name="line_2">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" rowspan="4">
+           <widget class="QGroupBox" name="ctr1_groupbox">
+            <property name="font">
+             <font>
+              <family>宋体</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #8899aa;</string>
+            </property>
+            <property name="title">
+             <string>控制</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout" rowstretch="1,2,1,2,1,1,1,1,1" columnstretch="1,0">
+               <item row="5" column="0" colspan="2">
+                <widget class="QComboBox" name="trig_comboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>通道1</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>通道2</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QCheckBox" name="ch2_checkbox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>启用</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0" colspan="2">
+                <widget class="QPushButton" name="open_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    /* 正常状态 */
+    background-color: #00D4FF; /* 浅灰背景 */
+    color: #ffffff; /* 深灰文字 */
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+QPushButton:pressed {
+    /* 按压状态（核心效果） */
+    background-color: #3B82F6; /* 蓝色背景 */
+    color: white; /* 白色文字（与正常状态反转） */
+    border-color: #2563EB; /* 深蓝边框 */
+}
+
+QPushButton:disabled {
+    /* 禁用状态（可选） */
+    background-color: #f5f5f5;
+    color: #999999;
+    border-color: #dddddd;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>开始▶</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <spacer name="horizontalSpacer_14">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="0">
+                <widget class="QCheckBox" name="ch1_checkbox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>启用</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <spacer name="horizontalSpacer_13">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="6" column="0" colspan="2">
+                <widget class="QComboBox" name="edge_comboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>上升沿</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>下降沿</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <spacer name="horizontalSpacer_12">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDial" name="ch1_amp_dial">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(255, 255, 0)
+</string>
+                 </property>
+                 <property name="maximum">
+                  <number>10</number>
+                 </property>
+                 <property name="singleStep">
+                  <number>1</number>
+                 </property>
+                 <property name="pageStep">
+                  <number>1</number>
+                 </property>
+                 <property name="value">
+                  <number>5</number>
+                 </property>
+                 <property name="sliderPosition">
+                  <number>5</number>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>false</bool>
+                 </property>
+                 <property name="wrapping">
+                  <bool>true</bool>
+                 </property>
+                 <property name="notchTarget">
+                  <double>4.700000000000000</double>
+                 </property>
+                 <property name="notchesVisible">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="ch2_label">
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>通道2</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QDial" name="ch2_amp_dial">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(0, 255, 255)</string>
+                 </property>
+                 <property name="maximum">
+                  <number>10</number>
+                 </property>
+                 <property name="pageStep">
+                  <number>1</number>
+                 </property>
+                 <property name="value">
+                  <number>5</number>
+                 </property>
+                 <property name="wrapping">
+                  <bool>true</bool>
+                 </property>
+                 <property name="notchesVisible">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="ch1_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>通道1</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="trig_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>触发</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="label_34">
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>频谱</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QPushButton" name="spectrum_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    /* 正常状态 */
+    background-color: #00D4FF; /* 浅灰背景 */
+    color: #ffffff; /* 深灰文字 */
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+QPushButton:pressed {
+    /* 按压状态（核心效果） */
+    background-color: #3B82F6; /* 蓝色背景 */
+    color: white; /* 白色文字（与正常状态反转） */
+    border-color: #2563EB; /* 深蓝边框 */
+}
+
+QPushButton:disabled {
+    /* 禁用状态（可选） */
+    background-color: #f5f5f5;
+    color: #999999;
+    border-color: #dddddd;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>打开</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="ch1_timebase_label">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:rgb(0, 255, 255);
+</string>
+            </property>
+            <property name="text">
+             <string>CH1:1.00v/div</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2" rowspan="3" colspan="5">
+           <widget class="PlotWidget" name="waveplot" native="true"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>信号发生器</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="1" column="0">
+         <layout class="QGridLayout" name="gridLayout_6" rowstretch="1,1,1" columnstretch="0,1,0,5,0">
+          <item row="1" column="1">
+           <widget class="QGroupBox" name="groupBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>宋体</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #8899aa;</string>
+            </property>
+            <property name="title">
+             <string>控制</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_9">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_8" rowstretch="1,1,1,1,1,1,1,1,1,1,0" columnstretch="1,1">
+               <item row="4" column="1">
+                <spacer name="horizontalSpacer_10">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="sine_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                   <weight>12</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QPushButton[checkable=&quot;true&quot;]{
+    /* 未选中标签样式 */
+    background-color: #1E293B; /* 深蓝背景 */
+    color: #94A3B8; /* 浅灰文字 */
+    padding: 8px 16px;
+    margin-right: 2px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 100;
+}
+
+QPushButton[checkable=&quot;true&quot;]:checked {
+    /* 选中标签样式 */
+    background-color: #1E293B; /* 亮蓝背景 */
+    color: #00D4FF;
+    border: 1px solid #60A5FA; /* 亮蓝边框 */
+}
+
+QPushButton[checkable=&quot;true&quot;]:hover:not(:checked){
+    /* 未选中但悬停 */
+    background-color: #334155;
+    color: #CBD5E1;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>正弦波</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resources.qrc">
+                   <normaloff>:/icons/icons/sine.svg</normaloff>:/icons/icons/sine.svg</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>40</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="0" colspan="2">
+                <widget class="QPushButton" name="emit_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    /* 正常状态 */
+    background-color: #00D4FF; /* 浅灰背景 */
+    color: #ffffff; /* 深灰文字 */
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+QPushButton:pressed {
+    /* 按压状态（核心效果） */
+    background-color: #3B82F6; /* 蓝色背景 */
+    color: white; /* 白色文字（与正常状态反转） */
+    border-color: #2563EB; /* 深蓝边框 */
+}
+
+QPushButton:disabled {
+    /* 禁用状态（可选） */
+    background-color: #f5f5f5;
+    color: #999999;
+    border-color: #dddddd;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>启动输出</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>直流偏移（-4V到+4V）</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0" colspan="2">
+                <widget class="QSlider" name="horizontalSlider_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">/* 设置水平QSlider的基本样式 */
+QSlider::groove:horizontal {
+    height: 8px;
+    background:rgb(0, 0, 0);
+    margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+    width: 18px;
+    height: 18px;
+    margin: -5px 0;
+    background: rgb(0, 255, 255);
+    border-radius: 9px;
+}
+
+
+
+</string>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="square_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                   <weight>12</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QPushButton[checkable=&quot;true&quot;]{
+    /* 未选中标签样式 */
+    background-color: #1E293B; /* 深蓝背景 */
+    color: #94A3B8; /* 浅灰文字 */
+    padding: 8px 16px;
+    margin-right: 2px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 100;
+}
+
+QPushButton[checkable=&quot;true&quot;]:checked {
+    /* 选中标签样式 */
+    background-color: #1E293B; /* 亮蓝背景 */
+    color: #00D4FF;
+    border: 1px solid #60A5FA; /* 亮蓝边框 */
+}
+
+QPushButton[checkable=&quot;true&quot;]:hover:not(:checked){
+    /* 未选中但悬停 */
+    background-color: #334155;
+    color: #CBD5E1;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>方波</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resources.qrc">
+                   <normaloff>:/icons/icons/square.svg</normaloff>:/icons/icons/square.svg</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>40</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="wave_choose">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>波形类型</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <spacer name="horizontalSpacer_9">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="8" column="1">
+                <spacer name="horizontalSpacer_11">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="0">
+                <widget class="QPushButton" name="triangle_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                   <weight>12</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QPushButton[checkable=&quot;true&quot;]{
+    /* 未选中标签样式 */
+    background-color: #1E293B; /* 深蓝背景 */
+    color: #94A3B8; /* 浅灰文字 */
+    padding: 8px 16px;
+    margin-right: 2px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 100;
+}
+
+QPushButton[checkable=&quot;true&quot;]:checked {
+    /* 选中标签样式 */
+    background-color: #1E293B; /* 亮蓝背景 */
+    color: #00D4FF;
+    border: 1px solid #60A5FA; /* 亮蓝边框 */
+}
+
+QPushButton[checkable=&quot;true&quot;]:hover:not(:checked){
+    /* 未选中但悬停 */
+    background-color: #334155;
+    color: #CBD5E1;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>三角波</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resources.qrc">
+                   <normaloff>:/icons/icons/triangle.svg</normaloff>:/icons/icons/triangle.svg</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>40</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLineEdit" name="fre_edit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QPushButton" name="saw_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                   <weight>12</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QPushButton[checkable=&quot;true&quot;]{
+    /* 未选中标签样式 */
+    background-color: #1E293B; /* 深蓝背景 */
+    color: #94A3B8; /* 浅灰文字 */
+    padding: 8px 16px;
+    margin-right: 2px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 100;
+}
+
+QPushButton[checkable=&quot;true&quot;]:checked {
+    /* 选中标签样式 */
+    background-color: #1E293B; /* 亮蓝背景 */
+    color: #00D4FF;
+    border: 1px solid #60A5FA; /* 亮蓝边框 */
+}
+
+QPushButton[checkable=&quot;true&quot;]:hover:not(:checked){
+    /* 未选中但悬停 */
+    background-color: #334155;
+    color: #CBD5E1;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>锯齿波</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resources.qrc">
+                   <normaloff>:/icons/icons/saw.svg</normaloff>:/icons/icons/saw.svg</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>40</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_3">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>频率</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0" colspan="2">
+                <widget class="QSlider" name="horizontalSlider">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">/* 设置水平QSlider的基本样式 */
+QSlider::groove:horizontal {
+    height: 8px;
+    background:rgb(0, 0, 0);
+    margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+    width: 18px;
+    height: 18px;
+    margin: -5px 0;
+    background: rgb(0, 255, 255);
+    border-radius: 9px;
+}
+
+
+
+</string>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="tickPosition">
+                  <enum>QSlider::NoTicks</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0" colspan="2">
+                <widget class="QLabel" name="label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>幅度（最大8V）</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QComboBox" name="fre_scale">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Hz</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>kHz</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>MHz</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QPushButton" name="bread_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                   <weight>12</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QPushButton[checkable=&quot;true&quot;]{
+    /* 未选中标签样式 */
+    background-color: #1E293B; /* 深蓝背景 */
+    color: #94A3B8; /* 浅灰文字 */
+    padding: 8px 16px;
+    margin-right: 2px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 100;
+}
+
+QPushButton[checkable=&quot;true&quot;]:checked {
+    /* 选中标签样式 */
+    background-color: #1E293B; /* 亮蓝背景 */
+    color: #00D4FF;
+    border: 1px solid #60A5FA; /* 亮蓝边框 */
+}
+
+QPushButton[checkable=&quot;true&quot;]:hover:not(:checked){
+    /* 未选中但悬停 */
+    background-color: #334155;
+    color: #CBD5E1;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>馒头波</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resources.qrc">
+                   <normaloff>:/icons/icons/bread.svg</normaloff>:/icons/icons/bread.svg</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>40</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="3" colspan="2">
+           <widget class="Line" name="line_5">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4" rowspan="2">
+           <widget class="Line" name="line_8">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2" colspan="2">
+           <widget class="Line" name="line_6">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2" rowspan="2">
+           <widget class="Line" name="line_7">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="serial_debug__tab">
+       <attribute name="title">
+        <string>串口调试助手</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_16">
+        <item row="0" column="1">
+         <layout class="QGridLayout" name="gridLayout_15" columnstretch="1,0,4,0">
+          <item row="1" column="0">
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>宋体</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #8899aa;</string>
+            </property>
+            <property name="title">
+             <string>协议转换</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_18">
+             <item row="1" column="0">
+              <widget class="QGroupBox" name="groupBox_5">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>微软雅黑</family>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="title">
+                <string>PWM控制</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_20">
+                <item row="0" column="0">
+                 <layout class="QGridLayout" name="gridLayout_19" rowstretch="0,0,0,0,0,0,0" columnstretch="1,1,0,1,1">
+                  <item row="2" column="1">
+                   <widget class="QLineEdit" name="ch1_pha_edit">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgb(255, 255, 255)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="4">
+                   <widget class="QCheckBox" name="ch4_check">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(255, 255, 0)</string>
+                    </property>
+                    <property name="text">
+                     <string>ch4</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="3">
+                   <widget class="QLineEdit" name="duty_edit">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgb(255, 255, 255)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QLineEdit" name="ch3_pha_edit">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgb(255, 255, 255)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="4">
+                   <widget class="QCheckBox" name="ch1_check">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(170, 85, 255)
+</string>
+                    </property>
+                    <property name="text">
+                     <string>ch1</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QLineEdit" name="ch2_pha_edit">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgb(255, 255, 255)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0" rowspan="3">
+                   <spacer name="verticalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="6" column="0" colspan="5">
+                   <widget class="QPushButton" name="output_btn">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+    /* 正常状态 */
+    background-color: #00D4FF; /* 浅灰背景 */
+    color: #ffffff; /* 深灰文字 */
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+QPushButton:pressed {
+    /* 按压状态（核心效果） */
+    background-color: #3B82F6; /* 蓝色背景 */
+    color: white; /* 白色文字（与正常状态反转） */
+    border-color: #2563EB; /* 深蓝边框 */
+}
+
+QPushButton:disabled {
+    /* 禁用状态（可选） */
+    background-color: #f5f5f5;
+    color: #999999;
+    border-color: #dddddd;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>输出</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLabel" name="label_19">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>宋体</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>相位</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="3" colspan="2">
+                   <widget class="QLabel" name="label_10">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>宋体</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>占空比</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="3" rowspan="3">
+                   <spacer name="verticalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="3" column="4">
+                   <widget class="QCheckBox" name="ch2_check">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgb(0, 170, 255);</string>
+                    </property>
+                    <property name="text">
+                     <string>ch2</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QLineEdit" name="ch4_pha_edit">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgb(255, 255, 255)</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="4">
+                   <widget class="QCheckBox" name="ch3_check">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(85, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>ch3</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_20">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>宋体</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>频率</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLineEdit" name="all_fre_edit">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:rgb(255, 255, 255)</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_17" rowstretch="4,0,0">
+               <item row="1" column="0">
+                <widget class="QComboBox" name="encode_box">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>hex</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>asc</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QPushButton" name="trans_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    /* 正常状态 */
+    background-color: #00D4FF; /* 浅灰背景 */
+    color: #ffffff; /* 深灰文字 */
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+QPushButton:pressed {
+    /* 按压状态（核心效果） */
+    background-color: #3B82F6; /* 蓝色背景 */
+    color: white; /* 白色文字（与正常状态反转） */
+    border-color: #2563EB; /* 深蓝边框 */
+}
+
+QPushButton:disabled {
+    /* 禁用状态（可选） */
+    background-color: #f5f5f5;
+    color: #999999;
+    border-color: #dddddd;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>发送</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QTextEdit" name="uart_edit">
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <property name="lineWidth">
+                  <number>1</number>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QAbstractScrollArea::AdjustToContents</enum>
+                 </property>
+                 <property name="tabChangesFocus">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="Line" name="line_19">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="Line" name="line_17">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="Line" name="line_18">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="Line" name="line_20">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>逻辑分析仪</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="1">
+         <layout class="QGridLayout" name="gridLayout_10" rowstretch="0,0,0" columnstretch="1,0,4,0,0">
+          <item row="1" column="0">
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>宋体</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #8899aa;</string>
+            </property>
+            <property name="title">
+             <string>控制</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_13">
+             <item row="0" column="1">
+              <layout class="QGridLayout" name="gridLayout_12" rowstretch="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_6">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>通道选择</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="0">
+                <widget class="QLineEdit" name="ch3_customlist_edit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QPushButton" name="sample_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    /* 正常状态 */
+    background-color: #00D4FF; /* 浅灰背景 */
+    color: #ffffff; /* 深灰文字 */
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+QPushButton:pressed {
+    /* 按压状态（核心效果） */
+    background-color: #3B82F6; /* 蓝色背景 */
+    color: white; /* 白色文字（与正常状态反转） */
+    border-color: #2563EB; /* 深蓝边框 */
+}
+
+QPushButton:disabled {
+    /* 禁用状态（可选） */
+    background-color: #f5f5f5;
+    color: #999999;
+    border-color: #dddddd;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>开始采集</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_8">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #8899aa;</string>
+                 </property>
+                 <property name="text">
+                  <string>采样深度</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="14" column="0">
+                <widget class="QPushButton" name="cum_output_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+    /* 正常状态 */
+    background-color: #00D4FF; /* 浅灰背景 */
+    color: #ffffff; /* 深灰文字 */
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+QPushButton:pressed {
+    /* 按压状态（核心效果） */
+    background-color: #3B82F6; /* 蓝色背景 */
+    color: white; /* 白色文字（与正常状态反转） */
+    border-color: #2563EB; /* 深蓝边框 */
+}
+
+QPushButton:disabled {
+    /* 禁用状态（可选） */
+    background-color: #f5f5f5;
+    color: #999999;
+    border-color: #dddddd;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>输出</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="15" column="0">
+                <widget class="QWidget" name="widget" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_25">
+                  <item row="0" column="0">
+                   <widget class="QGroupBox" name="groupBox_6">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>宋体</family>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: #8899aa;</string>
+                    </property>
+                    <property name="title">
+                     <string>测量</string>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_23" columnstretch="1,2">
+                     <item row="0" column="0" rowspan="2" colspan="2">
+                      <layout class="QGridLayout" name="gridLayout_24" rowstretch="1,1,1,1" columnstretch="1,2,1">
+                       <item row="2" column="0">
+                        <widget class="QLabel" name="ht_label_3">
+                         <property name="font">
+                          <font>
+                           <family>宋体</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>高电平时间</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="0">
+                        <widget class="QLabel" name="duty_label">
+                         <property name="font">
+                          <font>
+                           <family>宋体</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>占空比</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QLabel" name="fre_num_label">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>楷体</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color:#00D4FF</string>
+                         </property>
+                         <property name="text">
+                          <string>Hz</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="2">
+                        <widget class="QLabel" name="label_28">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>微软雅黑</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color:#00D4FF</string>
+                         </property>
+                         <property name="text">
+                          <string>Hz</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="0">
+                        <widget class="QLabel" name="label_27">
+                         <property name="font">
+                          <font>
+                           <family>宋体</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>低电平时间</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QLabel" name="duty_num_label">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>楷体</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color:#00D4FF</string>
+                         </property>
+                         <property name="text">
+                          <string>50%</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="1">
+                        <widget class="QLabel" name="lt_num_label">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>微软雅黑</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color:#00D4FF</string>
+                         </property>
+                         <property name="text">
+                          <string>s</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="2">
+                        <widget class="QLabel" name="label_30">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>微软雅黑</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color:#00D4FF</string>
+                         </property>
+                         <property name="text">
+                          <string>％</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="2">
+                        <widget class="QLabel" name="label_31">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>微软雅黑</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color:#00D4FF</string>
+                         </property>
+                         <property name="text">
+                          <string>S</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="fre_label_3">
+                         <property name="font">
+                          <font>
+                           <family>宋体</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>频率</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="1">
+                        <widget class="QLabel" name="ht_num_label">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>微软雅黑</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color:#00D4FF</string>
+                         </property>
+                         <property name="text">
+                          <string>s</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="2">
+                        <widget class="QLabel" name="label_32">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>微软雅黑</family>
+                           <pointsize>11</pointsize>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color:#00D4FF</string>
+                         </property>
+                         <property name="text">
+                          <string>S</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="12" column="0">
+                <widget class="QLabel" name="label_16">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>频率设置</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="0">
+                <widget class="QLineEdit" name="ch4_customlist_edit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="label_5">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>自定义序列输出</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="13" column="0">
+                <widget class="QLineEdit" name="cum_fre_edit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <layout class="QGridLayout" name="gridLayout_14">
+                 <item row="1" column="3">
+                  <widget class="QCheckBox" name="d8_checkBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(120, 0, 180)</string>
+                   </property>
+                   <property name="text">
+                    <string>D8</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QCheckBox" name="d6_checkBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color:rgb(255, 170, 0)</string>
+                   </property>
+                   <property name="text">
+                    <string>D6</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QCheckBox" name="d7_checkBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(0, 0, 255)</string>
+                   </property>
+                   <property name="text">
+                    <string>D7</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="d5_checkBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255, 0, 255)</string>
+                   </property>
+                   <property name="text">
+                    <string>D5</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QCheckBox" name="d4_checkBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(0, 255, 255)</string>
+                   </property>
+                   <property name="text">
+                    <string>D4</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="d1_checkBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255, 0, 0)
+</string>
+                   </property>
+                   <property name="text">
+                    <string>D1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QCheckBox" name="d2_checkBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color:rgb(255, 255, 0)</string>
+                   </property>
+                   <property name="text">
+                    <string>D2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QCheckBox" name="d3_checkBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(85, 255, 0);</string>
+                   </property>
+                   <property name="text">
+                    <string>D3</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="9" column="0">
+                <widget class="QLineEdit" name="ch2_customlist_edit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QComboBox" name="comboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>50M</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_7">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #8899aa;</string>
+                 </property>
+                 <property name="text">
+                  <string>采样率</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLineEdit" name="ch1_customlist_edit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="16" column="0">
+                <widget class="Line" name="line_9">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:#8899aa</string>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QComboBox" name="comboBox_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>11</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(255, 255, 255)</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>50MB</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="Line" name="line_16">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2" colspan="3">
+           <widget class="Line" name="line_11">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2" colspan="3">
+           <widget class="Line" name="line_15">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="Line" name="line_14">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(0, 255, 255)</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="memory_depth_label">
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #8899aa;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="connect_status_label">
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #8899aa;</string>
+        </property>
+        <property name="text">
+         <string>连接状态：未连接</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QWidget</extends>
+   <header>pyqtgraph</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

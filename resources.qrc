@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/icons">
+    <file>icons/sine.svg</file>
+    <file>icons/square.svg</file>
+    <file>icons/triangle.svg</file>
+    <file>icons/saw.svg</file>
+    <file>icons/PWM.svg</file>
+    <file>icons/I2C.svg</file>
+    <file>icons/SPI.svg</file>
+    <file>icons/uart.svg</file>
+    <file>icons/bread.svg</file>
+    
+  </qresource>
+</RCC>

@@ -1,0 +1,15 @@
+<svg width="160" height="70" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="70" fill="#1e293b" rx="3"/>
+  <text x="80" y="20" font-family="Arial" font-size="12" text-anchor="middle" fill="#06b6d4" font-weight="bold">UART</text>
+  <!-- 设备A -->
+  <rect x="20" y="30" width="35" height="20" fill="none" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="37" y="45" font-family="Arial" font-size="9" text-anchor="middle" fill="#94a3b8">A</text>
+  <!-- 设备B -->
+  <rect x="105" y="30" width="35" height="20" fill="none" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="122" y="45" font-family="Arial" font-size="9" text-anchor="middle" fill="#94a3b8">B</text>
+  <!-- TX/RX 交叉线 -->
+  <line x1="55" y1="40" x2="105" y2="50" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="70" y="35" font-family="Arial" font-size="8" fill="#06b6d4">TX</text>
+  <line x1="55" y1="50" x2="105" y2="40" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="70" y="55" font-family="Arial" font-size="8" fill="#06b6d4">RX</text>
+</svg>
